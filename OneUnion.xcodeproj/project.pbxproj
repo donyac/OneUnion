@@ -1,0 +1,274 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A88E95E1CA5368C0041018E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A88E95D1CA5368C0041018E /* main.m */; };
+		2A88E9611CA5368C0041018E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A88E9601CA5368C0041018E /* AppDelegate.m */; };
+		2A88E9691CA5368C0041018E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A88E9681CA5368C0041018E /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2A88E9591CA5368C0041018E /* OneUnion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneUnion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A88E95D1CA5368C0041018E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A88E95F1CA5368C0041018E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2A88E9601CA5368C0041018E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2A88E9681CA5368C0041018E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A88E96D1CA5368C0041018E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A88E9561CA5368C0041018E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A88E9501CA5368C0041018E = {
+			isa = PBXGroup;
+			children = (
+				2A88E95B1CA5368C0041018E /* OneUnion */,
+				2A88E95A1CA5368C0041018E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A88E95A1CA5368C0041018E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A88E9591CA5368C0041018E /* OneUnion.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A88E95B1CA5368C0041018E /* OneUnion */ = {
+			isa = PBXGroup;
+			children = (
+				2A88E95F1CA5368C0041018E /* AppDelegate.h */,
+				2A88E9601CA5368C0041018E /* AppDelegate.m */,
+				2A88E9681CA5368C0041018E /* Assets.xcassets */,
+				2A88E96D1CA5368C0041018E /* Info.plist */,
+				2A88E95C1CA5368C0041018E /* Supporting Files */,
+			);
+			path = OneUnion;
+			sourceTree = "<group>";
+		};
+		2A88E95C1CA5368C0041018E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2A88E95D1CA5368C0041018E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A88E9581CA5368C0041018E /* OneUnion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A88E9701CA5368C0041018E /* Build configuration list for PBXNativeTarget "OneUnion" */;
+			buildPhases = (
+				2A88E9551CA5368C0041018E /* Sources */,
+				2A88E9561CA5368C0041018E /* Frameworks */,
+				2A88E9571CA5368C0041018E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneUnion;
+			productName = OneUnion;
+			productReference = 2A88E9591CA5368C0041018E /* OneUnion.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A88E9511CA5368C0041018E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = didichuxing;
+				TargetAttributes = {
+					2A88E9581CA5368C0041018E = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 9RJ2KM4KK6;
+					};
+				};
+			};
+			buildConfigurationList = 2A88E9541CA5368C0041018E /* Build configuration list for PBXProject "OneUnion" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A88E9501CA5368C0041018E;
+			productRefGroup = 2A88E95A1CA5368C0041018E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A88E9581CA5368C0041018E /* OneUnion */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A88E9571CA5368C0041018E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A88E9691CA5368C0041018E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A88E9551CA5368C0041018E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A88E9611CA5368C0041018E /* AppDelegate.m in Sources */,
+				2A88E95E1CA5368C0041018E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2A88E96E1CA5368C0041018E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2A88E96F1CA5368C0041018E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A88E9711CA5368C0041018E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OneUnion/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.didichuxing.OneUnion;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2A88E9721CA5368C0041018E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OneUnion/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.didichuxing.OneUnion;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A88E9541CA5368C0041018E /* Build configuration list for PBXProject "OneUnion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A88E96E1CA5368C0041018E /* Debug */,
+				2A88E96F1CA5368C0041018E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A88E9701CA5368C0041018E /* Build configuration list for PBXNativeTarget "OneUnion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A88E9711CA5368C0041018E /* Debug */,
+				2A88E9721CA5368C0041018E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A88E9511CA5368C0041018E /* Project object */;
+}
