@@ -1,18 +1,18 @@
 //
-//  TopicsTableViewController.m
+//  TopicsViewController.m
 //  OneUnion
 //
 //  Created by 埋雷达人 on 16/3/26.
 //  Copyright © 2016年 didichuxing. All rights reserved.
 //
 
-#import "TopicsTableViewController.h"
+#import "TopicsViewController.h"
 
-@interface TopicsTableViewController ()
+@interface TopicsViewController ()
 
 @end
 
-@implementation TopicsTableViewController
+@implementation TopicsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

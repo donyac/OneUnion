@@ -1,14 +1,14 @@
 //
-//  MainView.m
+//  TopicsView.m
 //  OneUnion
 //
 //  Created by 埋雷达人 on 16/3/26.
 //  Copyright © 2016年 didichuxing. All rights reserved.
 //
 
-#import "MainView.h"
+#import "TopicsView.h"
 
-@implementation MainView
+@implementation TopicsView
 
 /*
 // Only override drawRect: if you perform custom drawing.

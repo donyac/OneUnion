@@ -1,5 +1,5 @@
 //
-//  TopicsTableViewController.h
+//  TopicsView.h
 //  OneUnion
 //
 //  Created by 埋雷达人 on 16/3/26.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TopicsTableViewController : UITableViewController
+@interface TopicsView : UIView
 
 @end
