@@ -53,7 +53,7 @@
         [self.floorHostBtn setTitle:@"我是楼主啊啊啊啊啊啊啊的顶顶顶顶顶啊啊啊" forState:UIControlStateNormal];
         [self.floorHostBtn setTitleColor:kColorBlue forState:UIControlStateNormal];
         [subContentView addSubview:self.floorHostBtn];
-        [self.floorHostBtn addTarget:self action:@selector(floorHostClicked:) forControlEvents:UIControlEventPrimaryActionTriggered];
+        [self.floorHostBtn addTarget:self action:@selector(floorHostClicked) forControlEvents:UIControlEventPrimaryActionTriggered];
     }
     return self;
 }

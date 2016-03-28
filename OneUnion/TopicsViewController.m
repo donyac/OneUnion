@@ -24,18 +24,19 @@
     self.clearsSelectionOnViewWillAppear = NO;
     //消除掉默认的分割线
     self.tableView.tableFooterView = [UIView new];
-    
-    //修改返回按钮文字
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
-    [self.navigationItem setBackBarButtonItem:backButton];
-
-    
+    //修改导航条背景色
     self.navigationController.navigationBar.backgroundColor = kColorSkyBlue;
     //修改标题字符
     self.navigationItem.title = @"北理FTP联盟";
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //修改返回按钮文字
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
+    [self.navigationItem setBackBarButtonItem:backButton];
+    //添加右侧按钮
+    UIImage *loadImage=[UIImage imageNamed:@"settings.png"];
+    UIButton *setingBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [setingBtn setImage:loadImage forState:UIControlStateNormal];
+    UIBarButtonItem *settingBtn = [[UIBarButtonItem alloc]initWithCustomView:setingBtn];
+    self.navigationItem.rightBarButtonItem = settingBtn;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,4 +82,8 @@
     [self.navigationController pushViewController:boardViewController animated:YES];
 }
 
+#pragma mark - setting
+- (void)pushSettingPage {
+    NSLog(@"进入设置界面");
+}
 @end

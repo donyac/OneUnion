@@ -17,6 +17,7 @@
 		2A88E9691CA5368C0041018E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A88E9681CA5368C0041018E /* Assets.xcassets */; };
 		2A9331E51CA8EF97008CAF98 /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9331E41CA8EF97008CAF98 /* BoardViewController.m */; };
 		2A9331E81CA8F838008CAF98 /* BoardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9331E71CA8F838008CAF98 /* BoardTableViewCell.m */; };
+		2A9331ED1CA9157B008CAF98 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9331EC1CA9157B008CAF98 /* settings.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		2A9331E41CA8EF97008CAF98 /* BoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardViewController.m; sourceTree = "<group>"; };
 		2A9331E61CA8F838008CAF98 /* BoardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardTableViewCell.h; sourceTree = "<group>"; };
 		2A9331E71CA8F838008CAF98 /* BoardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardTableViewCell.m; sourceTree = "<group>"; };
+		2A9331EC1CA9157B008CAF98 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		2A88E95B1CA5368C0041018E /* OneUnion */ = {
 			isa = PBXGroup;
 			children = (
+				2A9331EB1CA911A1008CAF98 /* Resources */,
 				2A050C761CA7A76000D95666 /* Common */,
 				2A42CF281CA6C2A80054EF6E /* View */,
 				2A42CF221CA6BF2C0054EF6E /* ViewController */,
@@ -133,6 +136,14 @@
 				2A88E95D1CA5368C0041018E /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2A9331EB1CA911A1008CAF98 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2A9331EC1CA9157B008CAF98 /* settings.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A9331ED1CA9157B008CAF98 /* settings.png in Resources */,
 				2A88E9691CA5368C0041018E /* Assets.xcassets in Resources */,
 				2A42CF271CA6C20B0054EF6E /* Default-568h@2x.png in Resources */,
 			);
