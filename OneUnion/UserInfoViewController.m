@@ -1,21 +1,28 @@
 //
-//  BoardViewController.m
+//  UserInfoViewController.m
 //  OneUnion
 //
 //  Created by 埋雷达人 on 16/3/28.
 //  Copyright © 2016年 didichuxing. All rights reserved.
 //
 
-#import "BoardViewController.h"
-#import "BoardTableViewCell.h"
+#import "UserInfoViewController.h"
+#import "UserInfoTableViewCell.h"
+#import "UIConfig.h"
 
-@implementation BoardViewController
+@implementation UserInfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     //向表视图注册应该使用Cell class
-    [self.tableView registerClass:[BoardTableViewCell class] forCellReuseIdentifier:@"BoardTableViewCell"];
+    [self.tableView registerClass:[UserInfoTableViewCell class] forCellReuseIdentifier:@"UserInfoTableViewCell"];
     self.clearsSelectionOnViewWillAppear = NO;
+    //添加一个头
+    UIImageView *headerView = [[UIImageView alloc]initWithFrame:CGRectMake(0,0, kDBScreenWidth, 100.0f)];
+    [headerView setImage:[UIImage imageNamed:@"me.png"]];
+    headerView.contentMode = UIViewContentModeCenter;
+    [self.tableView setTableHeaderView:headerView];
     //消除掉默认的分割线
     self.tableView.tableFooterView = [UIView new];
 }
@@ -27,11 +34,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 7;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BoardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BoardTableViewCell"
+    UserInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserInfoTableViewCell"
                                                                forIndexPath:indexPath];
     
     return cell;
@@ -41,6 +48,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 75.0f;
+    return 25.0f;
 }
 @end

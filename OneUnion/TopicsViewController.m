@@ -9,6 +9,7 @@
 #import "TopicsViewController.h"
 #import "TopicTableViewCell.h"
 #import "BoardViewController.h"
+#import "UserInfoViewController.h"
 #import "UIConfig.h"
 
 @interface TopicsViewController () <TopicTableViewCellDelegate>
@@ -83,9 +84,20 @@
     [self.navigationController pushViewController:boardViewController animated:YES];
 }
 
+- (void)personInformationClicked:(NSString *)peasonName {
+    if (nil == peasonName) {
+        return;
+    }
+    
+    NSLog(@"进入个人信息页面");
+    UserInfoViewController *userInfoViewController = [[UserInfoViewController alloc]init];
+    userInfoViewController.navigationItem.title = @"个人资料";
+    [self.navigationController pushViewController:userInfoViewController animated:YES];
+}
+
 #pragma mark - setting
 - (void)settingBtnClicked {
     NSLog(@"进入设置界面");
-    
+
 }
 @end

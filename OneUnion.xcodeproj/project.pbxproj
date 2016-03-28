@@ -18,10 +18,12 @@
 		2A9331E51CA8EF97008CAF98 /* BoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9331E41CA8EF97008CAF98 /* BoardViewController.m */; };
 		2A9331E81CA8F838008CAF98 /* BoardTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9331E71CA8F838008CAF98 /* BoardTableViewCell.m */; };
 		2A9331ED1CA9157B008CAF98 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9331EC1CA9157B008CAF98 /* settings.png */; };
-		2A9331F01CA9185A008CAF98 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9331EF1CA9185A008CAF98 /* SettingViewController.m */; };
 		2A9331F21CA919B3008CAF98 /* me.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9331F11CA919B3008CAF98 /* me.png */; };
 		2A9331F41CA919E9008CAF98 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9331F31CA919E9008CAF98 /* logout.png */; };
 		2A9331F61CA91A3E008CAF98 /* inner.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9331F51CA91A3E008CAF98 /* inner.png */; };
+		2A9331FF1CA92CED008CAF98 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9331FE1CA92CED008CAF98 /* UserInfoViewController.m */; };
+		2A9332051CA92D30008CAF98 /* UserInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9332041CA92D30008CAF98 /* UserInfoTableViewCell.m */; };
+		2A9332091CA9373E008CAF98 /* FloorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9332081CA9373E008CAF98 /* FloorsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,11 +48,15 @@
 		2A9331E61CA8F838008CAF98 /* BoardTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardTableViewCell.h; sourceTree = "<group>"; };
 		2A9331E71CA8F838008CAF98 /* BoardTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoardTableViewCell.m; sourceTree = "<group>"; };
 		2A9331EC1CA9157B008CAF98 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
-		2A9331EE1CA9185A008CAF98 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		2A9331EF1CA9185A008CAF98 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		2A9331F11CA919B3008CAF98 /* me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me.png; sourceTree = "<group>"; };
 		2A9331F31CA919E9008CAF98 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
 		2A9331F51CA91A3E008CAF98 /* inner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inner.png; sourceTree = "<group>"; };
+		2A9331FD1CA92CED008CAF98 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
+		2A9331FE1CA92CED008CAF98 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		2A9332031CA92D30008CAF98 /* UserInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoTableViewCell.h; sourceTree = "<group>"; };
+		2A9332041CA92D30008CAF98 /* UserInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoTableViewCell.m; sourceTree = "<group>"; };
+		2A9332071CA9373E008CAF98 /* FloorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloorsViewController.h; sourceTree = "<group>"; };
+		2A9332081CA9373E008CAF98 /* FloorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloorsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,8 @@
 				2A050C741CA79F7300D95666 /* TopicTableViewCell.m */,
 				2A9331E61CA8F838008CAF98 /* BoardTableViewCell.h */,
 				2A9331E71CA8F838008CAF98 /* BoardTableViewCell.m */,
+				2A9332031CA92D30008CAF98 /* UserInfoTableViewCell.h */,
+				2A9332041CA92D30008CAF98 /* UserInfoTableViewCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -94,8 +102,10 @@
 				2A42CF331CA6CD100054EF6E /* TopicsViewController.m */,
 				2A9331E31CA8EF97008CAF98 /* BoardViewController.h */,
 				2A9331E41CA8EF97008CAF98 /* BoardViewController.m */,
-				2A9331EE1CA9185A008CAF98 /* SettingViewController.h */,
-				2A9331EF1CA9185A008CAF98 /* SettingViewController.m */,
+				2A9331FD1CA92CED008CAF98 /* UserInfoViewController.h */,
+				2A9331FE1CA92CED008CAF98 /* UserInfoViewController.m */,
+				2A9332071CA9373E008CAF98 /* FloorsViewController.h */,
+				2A9332081CA9373E008CAF98 /* FloorsViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -236,13 +246,15 @@
 			files = (
 				2A9331E51CA8EF97008CAF98 /* BoardViewController.m in Sources */,
 				2A88E9611CA5368C0041018E /* AppDelegate.m in Sources */,
+				2A9332091CA9373E008CAF98 /* FloorsViewController.m in Sources */,
 				2A9331E81CA8F838008CAF98 /* BoardTableViewCell.m in Sources */,
 				2A88E95E1CA5368C0041018E /* main.m in Sources */,
 				2A050C7B1CA7ADA300D95666 /* UIColor-Expanded.m in Sources */,
-				2A9331F01CA9185A008CAF98 /* SettingViewController.m in Sources */,
 				2A42CF251CA6BFD50054EF6E /* MainViewController.m in Sources */,
+				2A9332051CA92D30008CAF98 /* UserInfoTableViewCell.m in Sources */,
 				2A42CF341CA6CD100054EF6E /* TopicsViewController.m in Sources */,
 				2A050C751CA79F7300D95666 /* TopicTableViewCell.m in Sources */,
+				2A9331FF1CA92CED008CAF98 /* UserInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  SettingViewController.h
+//  UserInfoTableViewCell.h
 //  OneUnion
 //
 //  Created by 埋雷达人 on 16/3/28.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingViewController : UIViewController
+@interface UserInfoTableViewCell : UITableViewCell
 
 @end
