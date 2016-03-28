@@ -16,7 +16,7 @@
 @implementation MainViewController
 
 /**
- *  使用topicsView初始化首页
+ *  使用topicsViewController初始化首页
  *
  *  @return 类自己
  */
