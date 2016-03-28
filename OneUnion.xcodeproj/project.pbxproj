@@ -24,6 +24,9 @@
 		2A9331FF1CA92CED008CAF98 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9331FE1CA92CED008CAF98 /* UserInfoViewController.m */; };
 		2A9332051CA92D30008CAF98 /* UserInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9332041CA92D30008CAF98 /* UserInfoTableViewCell.m */; };
 		2A9332091CA9373E008CAF98 /* FloorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9332081CA9373E008CAF98 /* FloorsViewController.m */; };
+		2A93320C1CA95810008CAF98 /* MsgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A93320B1CA95810008CAF98 /* MsgTableViewCell.m */; };
+		2A9332101CA96281008CAF98 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A93320F1CA96281008CAF98 /* Message.m */; };
+		2A9332121CA9665D008CAF98 /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9332111CA9665D008CAF98 /* head.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +60,11 @@
 		2A9332041CA92D30008CAF98 /* UserInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoTableViewCell.m; sourceTree = "<group>"; };
 		2A9332071CA9373E008CAF98 /* FloorsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloorsViewController.h; sourceTree = "<group>"; };
 		2A9332081CA9373E008CAF98 /* FloorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloorsViewController.m; sourceTree = "<group>"; };
+		2A93320A1CA95810008CAF98 /* MsgTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgTableViewCell.h; sourceTree = "<group>"; };
+		2A93320B1CA95810008CAF98 /* MsgTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgTableViewCell.m; sourceTree = "<group>"; };
+		2A93320E1CA96281008CAF98 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		2A93320F1CA96281008CAF98 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		2A9332111CA9665D008CAF98 /* head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,8 @@
 				2A9331E71CA8F838008CAF98 /* BoardTableViewCell.m */,
 				2A9332031CA92D30008CAF98 /* UserInfoTableViewCell.h */,
 				2A9332041CA92D30008CAF98 /* UserInfoTableViewCell.m */,
+				2A93320A1CA95810008CAF98 /* MsgTableViewCell.h */,
+				2A93320B1CA95810008CAF98 /* MsgTableViewCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -138,6 +148,7 @@
 		2A88E95B1CA5368C0041018E /* OneUnion */ = {
 			isa = PBXGroup;
 			children = (
+				2A93320D1CA96259008CAF98 /* Model */,
 				2A9331EB1CA911A1008CAF98 /* Resources */,
 				2A050C761CA7A76000D95666 /* Common */,
 				2A42CF281CA6C2A80054EF6E /* View */,
@@ -165,9 +176,19 @@
 				2A9331F11CA919B3008CAF98 /* me.png */,
 				2A9331F31CA919E9008CAF98 /* logout.png */,
 				2A9331EC1CA9157B008CAF98 /* settings.png */,
+				2A9332111CA9665D008CAF98 /* head.png */,
 				2A9331F51CA91A3E008CAF98 /* inner.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		2A93320D1CA96259008CAF98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2A93320E1CA96281008CAF98 /* Message.h */,
+				2A93320F1CA96281008CAF98 /* Message.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +253,7 @@
 				2A88E9691CA5368C0041018E /* Assets.xcassets in Resources */,
 				2A9331F61CA91A3E008CAF98 /* inner.png in Resources */,
 				2A9331F41CA919E9008CAF98 /* logout.png in Resources */,
+				2A9332121CA9665D008CAF98 /* head.png in Resources */,
 				2A42CF271CA6C20B0054EF6E /* Default-568h@2x.png in Resources */,
 				2A9331F21CA919B3008CAF98 /* me.png in Resources */,
 			);
@@ -244,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A93320C1CA95810008CAF98 /* MsgTableViewCell.m in Sources */,
 				2A9331E51CA8EF97008CAF98 /* BoardViewController.m in Sources */,
 				2A88E9611CA5368C0041018E /* AppDelegate.m in Sources */,
 				2A9332091CA9373E008CAF98 /* FloorsViewController.m in Sources */,
@@ -254,6 +277,7 @@
 				2A9332051CA92D30008CAF98 /* UserInfoTableViewCell.m in Sources */,
 				2A42CF341CA6CD100054EF6E /* TopicsViewController.m in Sources */,
 				2A050C751CA79F7300D95666 /* TopicTableViewCell.m in Sources */,
+				2A9332101CA96281008CAF98 /* Message.m in Sources */,
 				2A9331FF1CA92CED008CAF98 /* UserInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

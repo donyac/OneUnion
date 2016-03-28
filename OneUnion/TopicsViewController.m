@@ -10,6 +10,7 @@
 #import "TopicTableViewCell.h"
 #import "BoardViewController.h"
 #import "UserInfoViewController.h"
+#import "FloorsViewController.h"
 #import "UIConfig.h"
 
 @interface TopicsViewController () <TopicTableViewCellDelegate>
@@ -71,6 +72,10 @@
     return 80.0f;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    FloorsViewController *floorsViewController = [[FloorsViewController alloc]init];
+    [self.navigationController pushViewController:floorsViewController animated:YES];
+}
 
 #pragma mark - TopicTableViewCellDelegate
 - (void)boardButtonClicked:(NSString *)btnTitle {

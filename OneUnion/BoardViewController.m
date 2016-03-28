@@ -33,7 +33,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BoardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BoardTableViewCell"
                                                                forIndexPath:indexPath];
-    
+    //告诉cell各个子view的高度
     return cell;
 }
 
@@ -41,6 +41,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //cell总高度
     return 75.0f;
 }
 @end
