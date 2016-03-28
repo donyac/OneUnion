@@ -17,8 +17,6 @@
 
 /**
  *  使用topicsViewController初始化首页
- *
- *  @return 类自己
  */
 - (instancetype) init {
     TopicsViewController *topicsViewController = [[TopicsViewController alloc]init];

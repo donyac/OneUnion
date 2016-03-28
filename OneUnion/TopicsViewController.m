@@ -33,10 +33,11 @@
     [self.navigationItem setBackBarButtonItem:backButton];
     //添加右侧按钮
     UIImage *loadImage=[UIImage imageNamed:@"settings.png"];
-    UIButton *setingBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [setingBtn setImage:loadImage forState:UIControlStateNormal];
-    UIBarButtonItem *settingBtn = [[UIBarButtonItem alloc]initWithCustomView:setingBtn];
-    self.navigationItem.rightBarButtonItem = settingBtn;
+    UIButton *settingBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [settingBtn setImage:loadImage forState:UIControlStateNormal];
+    UIBarButtonItem *settingBtnItem = [[UIBarButtonItem alloc]initWithCustomView:settingBtn];
+    self.navigationItem.rightBarButtonItem = settingBtnItem;
+    [settingBtn addTarget:self action:@selector(settingBtnClicked) forControlEvents:UIControlEventPrimaryActionTriggered];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -83,7 +84,8 @@
 }
 
 #pragma mark - setting
-- (void)pushSettingPage {
+- (void)settingBtnClicked {
     NSLog(@"进入设置界面");
+    
 }
 @end

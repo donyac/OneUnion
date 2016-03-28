@@ -18,11 +18,6 @@
     self.clearsSelectionOnViewWillAppear = NO;
     //消除掉默认的分割线
     self.tableView.tableFooterView = [UIView new];
-    
-    //self.navigationItem.title = @"BOARD";
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 #pragma mark - Table view data source <UITableViewDataSource>
