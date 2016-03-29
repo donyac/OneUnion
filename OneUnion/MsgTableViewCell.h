@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Message.h"
 
+const static CGFloat MsgCellBtnHeight = 30.0f;
+
 @interface MsgTableViewCell : UITableViewCell
-@property (nonatomic,weak) Message *message;
+@property (nonatomic,strong) Message *message;
 @end

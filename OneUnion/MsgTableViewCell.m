@@ -25,33 +25,49 @@
         self.contentView.backgroundColor = kColorWhite;
         self.selectionStyle=UITableViewCellSelectionStyleNone;
         
-        UIView *subContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDBScreenWidth, 100.0f)];
-        subContentView.backgroundColor = kColorLightGray;
-        [self.contentView addSubview:subContentView];
-        
-        self.idBtn = [[UIButton alloc]initWithFrame:CGRectMake(2, 2, 120, 50)];
-        UIImage *headImage=[UIImage imageNamed:@"head.png"];
-        [self.idBtn setImage:headImage forState:UIControlStateNormal];
-        [self.idBtn setTitle:@"王二" forState:UIControlStateNormal];
-        [subContentView addSubview:self.idBtn];
-        
-        self.contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 52, kDBScreenWidth, 48)];
-        self.contentLabel.text = _message.content;
-        self.contentLabel.lineBreakMode = NSLineBreakByCharWrapping;
-        [subContentView addSubview:self.contentLabel];
+        NSLog(@"Init cell");
     }
     return self;
 }
 
-//- (void)layoutSubviews {
-//    [super layoutSubviews];
-//    self.idBtn.frame.size.height
-//}
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    NSLog(@"In layoutSubviews");
+    if (self.message == nil) {
+        NSLog(@"message is nil");
+    }
+    else {
+        CGFloat cellHeight = self.message.cellHeight;
+        UIView *subContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDBScreenWidth, MsgCellBtnHeight+cellHeight+10)];
+        subContentView.backgroundColor = kColorLightGray1;
+        [self.contentView addSubview:subContentView];
+        
+        self.idBtn = [[UIButton alloc]initWithFrame:CGRectMake(2, 2, 100, MsgCellBtnHeight)];
+        UIImage *headImage=[UIImage imageNamed:@"head.png"];
+        [self.idBtn.imageView setContentMode:UIViewContentModeScaleAspectFit];
+        [self.idBtn setImage:headImage forState:UIControlStateNormal];
+        //button图片的偏移量，距上左下右分别(0, 0, 0, 70)像素点
+        self.idBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 70);
+        [self.idBtn setTitle:self.message.uid forState:UIControlStateNormal];
+        //button标题的偏移量，这个偏移量是相对于图片的
+        self.idBtn.titleEdgeInsets = UIEdgeInsetsMake(0,-70, 0, 0);
+        [subContentView addSubview:self.idBtn];
+        
+        self.contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 30, kDBScreenWidth, cellHeight+20)];
+        self.contentLabel.text = self.message.content;
+        self.contentLabel.font = kFontSizeMedium;
+        self.contentLabel.lineBreakMode = NSLineBreakByCharWrapping;
+        self.contentLabel.backgroundColor = kColorWhite;
+        [subContentView addSubview:self.contentLabel];
+    }
+}
 
 #pragma setter
 
 - (void)setMessage:(Message *)message {
     _message = message;
     self.contentLabel.text = _message.content;
+    NSLog(@"set message");
 }
 @end

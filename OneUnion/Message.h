@@ -6,9 +6,10 @@
 //  Copyright © 2016年 didichuxing. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Message : NSObject
-@property (nonatomic, strong) NSString *uid;
-@property (nonatomic, strong) NSString *content;
+@property (nonatomic, copy) NSString *uid;
+@property (nonatomic, copy) NSString *content;
+@property (nonatomic, assign, readonly) CGFloat cellHeight;
 @end
