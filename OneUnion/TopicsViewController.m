@@ -83,7 +83,6 @@
                            forState:UIControlStateNormal];
         [cell.boardBtn setTitle:self.topicList[indexPath.row].boardName
                        forState:UIControlStateNormal];
-        cell.boardID = self.topicList[indexPath.row].boardID;//赋给boardName的同时，必须赋对应的boardID
     }
     cell.delegate = self;
     return cell;
@@ -98,20 +97,22 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     FloorsViewController *floorsViewController = [[FloorsViewController alloc]init];
-    //这里应该带着model
+    //这里应该带着topicId参数
+    floorsViewController.topicID = self.topicList[indexPath.row].topicID;
+    
     [self.navigationController pushViewController:floorsViewController animated:YES];
     NSLog(@"进入具体楼页面");
 }
 
 #pragma mark - TopicTableViewCellDelegate
-- (void)boardButtonClicked:(NSString *)boardName andID:(NSInteger) boardID {
+- (void)boardButtonClicked:(NSString *)boardName {
     
     if (nil == boardName) {
         return;
     }
     
     NSLog(@"进入版区界面");
-    BoardViewController *boardViewController = [[BoardViewController alloc]initWithBoard:boardID];
+    BoardViewController *boardViewController = [[BoardViewController alloc]initWithBoardName:boardName];
     boardViewController.navigationItem.title = boardName;
     [self.navigationController pushViewController:boardViewController animated:YES];
 }

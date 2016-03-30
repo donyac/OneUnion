@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FloorsViewController : UITableViewController
-
+@property (nonatomic, assign) NSInteger topicID;
+//@property
 @end

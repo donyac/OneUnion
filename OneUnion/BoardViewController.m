@@ -18,11 +18,11 @@
 
 @implementation BoardViewController
 
-- (instancetype)initWithBoard:(NSInteger) boardID {
+- (instancetype)initWithBoardName:(NSString *) boardName {
     self = [super init];
     if (self) {
         //初始化模型，获取某一版区列表的最新文章
-        self.topicList = [OneDb RecentTopics:boardID];
+        self.topicList = [OneDb RecentTopics:boardName];
     }
     return self;
 }

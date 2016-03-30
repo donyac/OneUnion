@@ -60,8 +60,8 @@
  *  版区按钮被点击
  */
 - (void)boardClicked {
-    if ([self.delegate respondsToSelector:@selector(boardButtonClicked: andID:)]) {
-        [self.delegate boardButtonClicked:self.boardBtn.titleLabel.text andID:self.boardID];
+    if ([self.delegate respondsToSelector:@selector(boardButtonClicked:)]) {
+        [self.delegate boardButtonClicked:self.boardBtn.titleLabel.text];
     }
     else {
         NSLog(@"未定义委托");

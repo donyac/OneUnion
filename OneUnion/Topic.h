@@ -14,7 +14,6 @@
 @property (nonatomic, copy) NSString *topicString;
 @property (nonatomic, assign) NSInteger authorID;
 @property (nonatomic, copy) NSString *authorName;
-@property (nonatomic, assign) NSInteger boardID;
 @property (nonatomic, copy) NSString *boardName;
 @property (nonatomic, strong) NSDate *timeStamp;
 @end

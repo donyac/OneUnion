@@ -11,7 +11,19 @@
 #import "WriteViewController.h"
 #import "UIConfig.h"
 
+@interface FloorsViewController ()
+//@property (nonatomic, strong) NSArray<Topic *> *topicList;
+@end
+
 @implementation FloorsViewController
+
+-(instancetype) initWithTopicID:(NSInteger) topicID {
+    self = [super init];
+    if (self) {
+        //statements
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

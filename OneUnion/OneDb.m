@@ -32,9 +32,9 @@
     return [OneDb ConvertTopicsFromAvObjects:recentTopics];
 }
 
-+ (NSArray<Topic *> *)RecentTopics:(NSInteger) boardID {
++ (NSArray<Topic *> *)RecentTopics:(NSString *) boardName {
     AVQuery *queryTopic = [AVQuery queryWithClassName:@"TopicModel"];
-    [queryTopic whereKey:@"boardID" equalTo:@(boardID)];
+    [queryTopic whereKey:@"boardName" equalTo:boardName];
     // 按时间，降序排列
     [queryTopic orderByDescending:@"createdAt"];
     queryTopic.limit = 10;//只返回最多10个结果
@@ -58,7 +58,7 @@
         _topic.topicID = [[avTopic objectForKey:@"topicID"] integerValue];
         _topic.topicString = [avTopic objectForKey:@"topicString"];
         _topic.authorID = [[avTopic objectForKey:@"authorID"] integerValue];
-        _topic.boardID = [[avTopic objectForKey:@"boardID"] integerValue];
+        _topic.boardName = [avTopic objectForKey:@"boardName"];
         _topic.timeStamp = avTopic.updatedAt;
         
         //取得用户名字符串
@@ -67,12 +67,6 @@
         AVObject *objectUserID = [query getFirstObject];
         // object 就是符合条件的第一个 AVObject
         _topic.authorName = [objectUserID objectForKey:@"userName"];
-        
-        //取得板块名字符串
-        query = [AVQuery queryWithClassName:@"BoardTable"];
-        [query whereKey:@"boardID" equalTo:@(_topic.boardID)];
-        AVObject *objectBoardID = [query getFirstObject];
-        _topic.boardName = [objectBoardID objectForKey:@"boardName"];
         
         //添加_topic进入topicList
         [topicList addObject:_topic];
