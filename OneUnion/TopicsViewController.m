@@ -12,12 +12,25 @@
 #import "UserInfoViewController.h"
 #import "FloorsViewController.h"
 #import "UIConfig.h"
+#import "OneDb.h"
+#import "Topic.h"
+
 
 @interface TopicsViewController () <TopicTableViewCellDelegate>
 
+@property (nonatomic, strong) NSArray<Topic *> *topicList;
 @end
 
 @implementation TopicsViewController
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        //初始化模型
+        self.topicList = [OneDb RecentTopics];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,6 +53,8 @@
     UIBarButtonItem *settingBtnItem = [[UIBarButtonItem alloc]initWithCustomView:settingBtn];
     self.navigationItem.rightBarButtonItem = settingBtnItem;
     [settingBtn addTarget:self action:@selector(settingBtnClicked) forControlEvents:UIControlEventPrimaryActionTriggered];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,13 +69,20 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 6;
+    return self.topicList.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TopicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TopicTableViewCell"
                                                                forIndexPath:indexPath];
+    
+    //根据index书写model
+    if (cell) {
+        cell.topicLabel.text = self.topicList[indexPath.row].topicString;
+        cell.floorHostBtn.titleLabel.text = self.topicList[indexPath.row].authorName;
+        cell.boardBtn.titleLabel.text = self.topicList[indexPath.row].boardName;
+    }
     cell.delegate = self;
     return cell;
 }
@@ -105,6 +127,5 @@
 #pragma mark - setting
 - (void)settingBtnClicked {
     NSLog(@"进入设置界面");
-
 }
 @end

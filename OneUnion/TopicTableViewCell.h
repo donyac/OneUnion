@@ -17,5 +17,9 @@
 
 @interface TopicTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) UILabel *topicLabel;
+@property (nonatomic, strong) UIButton *boardBtn;
+@property (nonatomic, strong) UIButton *floorHostBtn;
+
 @property (nonatomic, weak) id<TopicTableViewCellDelegate> delegate;
 @end

@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "OneDb.h"
+
 
 @interface AppDelegate ()
 
@@ -18,6 +20,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
+    
+    //加载数据库
+    [OneDb InitAvos];
     
     MainViewController *mainVC = [[MainViewController alloc]init];
     self.window.rootViewController = mainVC;

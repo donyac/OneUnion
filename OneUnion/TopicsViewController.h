@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TopicsViewController : UITableViewController
 
+@interface TopicsViewController : UITableViewController
 @end

@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "TopicsViewController.h"
+#import <AVOSCloud/AVOSCloud.h>
 
 @interface MainViewController ()
 
@@ -27,7 +28,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

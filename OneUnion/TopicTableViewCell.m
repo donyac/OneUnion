@@ -10,9 +10,7 @@
 #import "UIConfig.h"
 
 @interface TopicTableViewCell ()
-@property (nonatomic, strong) UILabel *topicLabel;
-@property (nonatomic, strong) UIButton *boardBtn;
-@property (nonatomic, strong) UIButton *floorHostBtn;
+
 @end
 
 @implementation TopicTableViewCell
