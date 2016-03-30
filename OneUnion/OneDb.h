@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "Topic.h"
+#import "Floor.h"
 
 @interface OneDb : NSObject
 
 + (void)InitAvos;
 + (NSArray<Topic *> *)RecentTopics;
 + (NSArray<Topic *> *)RecentTopics:(NSString *) boardName;
++ (NSArray<Floor *> *)AllFloors:(NSInteger) topicID;
 @end

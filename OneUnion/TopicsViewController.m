@@ -96,9 +96,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    FloorsViewController *floorsViewController = [[FloorsViewController alloc]init];
-    //这里应该带着topicId参数
-    floorsViewController.topicID = self.topicList[indexPath.row].topicID;
+    NSInteger topicID = self.topicList[indexPath.row].topicID;
+    FloorsViewController *floorsViewController = [[FloorsViewController alloc]initWithTopicID:topicID];
+    [floorsViewController setTopicName:self.topicList[indexPath.row].topicString];
     
     [self.navigationController pushViewController:floorsViewController animated:YES];
     NSLog(@"进入具体楼页面");

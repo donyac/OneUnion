@@ -36,7 +36,7 @@
     AVQuery *queryTopic = [AVQuery queryWithClassName:@"TopicModel"];
     [queryTopic whereKey:@"boardName" equalTo:boardName];
     // 按时间，降序排列
-    [queryTopic orderByDescending:@"createdAt"];
+    [queryTopic orderByDescending:@"updatedAt"];
     queryTopic.limit = 10;//只返回最多10个结果
     NSArray<AVObject *> *recentTopics = [queryTopic findObjects];
     
@@ -45,6 +45,17 @@
     return [OneDb ConvertTopicsFromAvObjects:recentTopics];
 }
 
++ (NSArray<Floor *> *)AllFloors:(NSInteger) topicID {
+    AVQuery *queryFloor = [AVQuery queryWithClassName:@"FloorTable"];
+    [queryFloor whereKey:@"topicID" equalTo:@(topicID)];
+    //按时间，升序排列，最新的帖子在最下方
+    [queryFloor orderByAscending:@"updatedAt"];
+    NSArray<AVObject *> *floors = [queryFloor findObjects];
+    
+    NSLog(@"floors num = %ld",floors.count);
+    
+    return [OneDb ConvertFloorsFromAvObjects:floors];
+}
 /**
  *  填充topicList
  */
@@ -73,5 +84,35 @@
     }
 
     return topicList;
+}
+/**
+ *  填充floorList
+ */
++ (NSArray<Floor *> *) ConvertFloorsFromAvObjects:(NSArray<AVObject *> *)recentTopics {
+    //创建空数组
+    NSMutableArray<Floor *> *floorList = [NSMutableArray array];
+    
+    for (AVObject *avFloor in recentTopics) {
+        
+        Floor *_floor = [Floor new];
+        _floor.floorID = [[avFloor objectForKey:@"floorID"] integerValue];
+        _floor.topicID = [[avFloor objectForKey:@"topicID"] integerValue];
+        _floor.content = [avFloor objectForKey:@"content"];
+        _floor.authorID = [[avFloor objectForKey:@"authorID"] integerValue];
+        _floor.boardName = [avFloor objectForKey:@"boardName"];
+        _floor.timeStamp = avFloor.updatedAt;
+        
+        //取得用户名字符串
+        AVQuery *query = [AVQuery queryWithClassName:@"UserTable"];
+        [query whereKey:@"userID" equalTo:@(_floor.authorID)];
+        AVObject *objectUserID = [query getFirstObject];
+        // object 就是符合条件的第一个 AVObject
+        _floor.authorName = [objectUserID objectForKey:@"userName"];
+        
+        //添加_floor进入floorList
+        [floorList addObject:_floor];
+    }
+    
+    return floorList;
 }
 @end

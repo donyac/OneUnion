@@ -14,6 +14,7 @@
 		2A42CF251CA6BFD50054EF6E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A42CF241CA6BFD50054EF6E /* MainViewController.m */; };
 		2A42CF271CA6C20B0054EF6E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A42CF261CA6C20B0054EF6E /* Default-568h@2x.png */; };
 		2A42CF341CA6CD100054EF6E /* TopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A42CF331CA6CD100054EF6E /* TopicsViewController.m */; };
+		2A6536F81CABDE3A00898D15 /* Floor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A6536F71CABDE3A00898D15 /* Floor.m */; };
 		2A7EC3A81CAA423B0003C063 /* write.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7EC3A71CAA423B0003C063 /* write.png */; };
 		2A7EC3AB1CAA43080003C063 /* WriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7EC3AA1CAA43080003C063 /* WriteViewController.m */; };
 		2A7EC3AD1CAA44AB0003C063 /* send.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7EC3AC1CAA44AB0003C063 /* send.png */; };
@@ -30,7 +31,6 @@
 		2A9332051CA92D30008CAF98 /* UserInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9332041CA92D30008CAF98 /* UserInfoTableViewCell.m */; };
 		2A9332091CA9373E008CAF98 /* FloorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9332081CA9373E008CAF98 /* FloorsViewController.m */; };
 		2A93320C1CA95810008CAF98 /* MsgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A93320B1CA95810008CAF98 /* MsgTableViewCell.m */; };
-		2A9332101CA96281008CAF98 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A93320F1CA96281008CAF98 /* Message.m */; };
 		2A9332121CA9665D008CAF98 /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9332111CA9665D008CAF98 /* head.png */; };
 		313FB5185399C10FB354288C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0D4F7A4380806122E51245 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -51,6 +51,8 @@
 		2A42CF261CA6C20B0054EF6E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2A42CF321CA6CD100054EF6E /* TopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicsViewController.h; sourceTree = "<group>"; };
 		2A42CF331CA6CD100054EF6E /* TopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicsViewController.m; sourceTree = "<group>"; };
+		2A6536F61CABDE3A00898D15 /* Floor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Floor.h; sourceTree = "<group>"; };
+		2A6536F71CABDE3A00898D15 /* Floor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Floor.m; sourceTree = "<group>"; };
 		2A7E631E1CAB6AA500665AB1 /* CommonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
 		2A7EC3A71CAA423B0003C063 /* write.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = write.png; sourceTree = "<group>"; };
 		2A7EC3A91CAA43080003C063 /* WriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteViewController.h; sourceTree = "<group>"; };
@@ -78,8 +80,6 @@
 		2A9332081CA9373E008CAF98 /* FloorsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloorsViewController.m; sourceTree = "<group>"; };
 		2A93320A1CA95810008CAF98 /* MsgTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgTableViewCell.h; sourceTree = "<group>"; };
 		2A93320B1CA95810008CAF98 /* MsgTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgTableViewCell.m; sourceTree = "<group>"; };
-		2A93320E1CA96281008CAF98 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
-		2A93320F1CA96281008CAF98 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		2A9332111CA9665D008CAF98 /* head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head.png; sourceTree = "<group>"; };
 		6B0D4F7A4380806122E51245 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98A75D07CEBD57858183E90 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -230,10 +230,10 @@
 		2A93320D1CA96259008CAF98 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2A93320E1CA96281008CAF98 /* Message.h */,
-				2A93320F1CA96281008CAF98 /* Message.m */,
 				2A1CCD971CABA58B008B89F9 /* Topic.h */,
 				2A1CCD981CABA58B008B89F9 /* Topic.m */,
+				2A6536F61CABDE3A00898D15 /* Floor.h */,
+				2A6536F71CABDE3A00898D15 /* Floor.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -387,8 +387,8 @@
 				2A9332051CA92D30008CAF98 /* UserInfoTableViewCell.m in Sources */,
 				2A42CF341CA6CD100054EF6E /* TopicsViewController.m in Sources */,
 				2A050C751CA79F7300D95666 /* TopicTableViewCell.m in Sources */,
-				2A9332101CA96281008CAF98 /* Message.m in Sources */,
 				2A7EC3AB1CAA43080003C063 /* WriteViewController.m in Sources */,
+				2A6536F81CABDE3A00898D15 /* Floor.m in Sources */,
 				2A9331FF1CA92CED008CAF98 /* UserInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

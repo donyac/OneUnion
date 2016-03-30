@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Message.h"
+#import "Floor.h"
 
 const static CGFloat MsgCellBtnHeight = 30.0f;
 
 @interface MsgTableViewCell : UITableViewCell
-@property (nonatomic,strong) Message *message;
+@property (nonatomic,strong) Floor *floor;
 @end

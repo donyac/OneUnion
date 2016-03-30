@@ -31,8 +31,8 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    if (self.message) {
-        CGFloat cellHeight = self.message.cellHeight;
+    if (self.floor) {
+        CGFloat cellHeight = self.floor.cellHeight;
         UIView *subContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDBScreenWidth, MsgCellBtnHeight+cellHeight+10)];
         subContentView.backgroundColor = kColorLightGray1;
         [self.contentView addSubview:subContentView];
@@ -43,13 +43,13 @@
         [self.idBtn setImage:headImage forState:UIControlStateNormal];
         //button图片的偏移量，距上左下右分别(0, 0, 0, 70)像素点
         self.idBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 70);
-        [self.idBtn setTitle:self.message.uid forState:UIControlStateNormal];
+        [self.idBtn setTitle:self.floor.authorName forState:UIControlStateNormal];
         //button标题的偏移量，这个偏移量是相对于图片的
-        self.idBtn.titleEdgeInsets = UIEdgeInsetsMake(0,-70, 0, 0);
+        self.idBtn.titleEdgeInsets = UIEdgeInsetsMake(0,-40, 0, -20);
         [subContentView addSubview:self.idBtn];
         
         self.contentLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 30, kDBScreenWidth, cellHeight+20)];
-        self.contentLabel.text = self.message.content;
+        self.contentLabel.text = self.floor.content;
         self.contentLabel.font = kFontSizeMedium;
         self.contentLabel.lineBreakMode = NSLineBreakByCharWrapping;
         self.contentLabel.backgroundColor = kColorWhite;
@@ -59,9 +59,9 @@
 
 #pragma setter
 
-- (void)setMessage:(Message *)message {
-    _message = message;
-    self.contentLabel.text = _message.content;
-    NSLog(@"set message");
+- (void)setFloor:(Floor *)floor{
+    _floor = floor;
+    self.contentLabel.text = _floor.content;
+    NSLog(@"set floor");
 }
 @end

@@ -9,10 +9,14 @@
 #import "FloorsViewController.h"
 #import "MsgTableViewCell.h"
 #import "WriteViewController.h"
+#import "Floor.h"
+#import "OneDb.h"
 #import "UIConfig.h"
 
 @interface FloorsViewController ()
-//@property (nonatomic, strong) NSArray<Topic *> *topicList;
+@property (nonatomic, assign) NSInteger topicID;
+@property (nonatomic, strong) NSString *topicName;
+@property (nonatomic, strong) NSArray<Floor *> *floorList;
 @end
 
 @implementation FloorsViewController
@@ -20,9 +24,15 @@
 -(instancetype) initWithTopicID:(NSInteger) topicID {
     self = [super init];
     if (self) {
-        //statements
+        //初始化模型，获取某个主题的所有帖子
+        self.topicID = topicID;
+        self.floorList = [OneDb AllFloors:topicID];
     }
     return self;
+}
+
+- (void)setTopicName:(NSString*) topicName {
+    self.topicName = [topicName copy];
 }
 
 - (void)viewDidLoad {
@@ -34,7 +44,7 @@
     
     //添加一个头
     UILabel *topicLabel = [[UILabel alloc]initWithFrame:CGRectMake(0,0, kDBScreenWidth, 20.0f)];
-    topicLabel.text = @"我是Topic";
+    topicLabel.text = self.topicName;
     topicLabel.font = [UIFont boldSystemFontOfSize:16];
     topicLabel.numberOfLines = 2;
     topicLabel.lineBreakMode = NSLineBreakByCharWrapping;
@@ -58,13 +68,16 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.floorList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MsgTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MsgTableViewCell"
                                                                   forIndexPath:indexPath];
-    cell.message = [[Message alloc]init];
+    if (cell) {
+        cell.floor = self.floorList[indexPath.row];
+    }
+    
     return cell;
 }
 
@@ -72,9 +85,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //Message *message = self.dataList[indexPath.row];
-    Message *message = [[Message alloc]init];
-    return message.cellHeight + MsgCellBtnHeight + 25;
+    return self.floorList[indexPath.row].cellHeight + MsgCellBtnHeight + 25;
 }
 
 #pragma mark - setting

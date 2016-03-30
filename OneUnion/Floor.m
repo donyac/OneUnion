@@ -1,26 +1,17 @@
 //
-//  Message.m
+//  Floor.m
 //  OneUnion
 //
-//  Created by 埋雷达人 on 16/3/28.
+//  Created by 埋雷达人 on 16/3/30.
 //  Copyright © 2016年 didichuxing. All rights reserved.
 //
 
-#import "Message.h"
+#import "Floor.h"
 
 const static int contentFont = 12;
 
-@implementation Message
+@implementation Floor
 @synthesize cellHeight = _cellHeight;
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.content = @"test content";
-        self.uid = @"Peter";
-    }
-    return self;
-}
 
 /**
  *  重写cellHeight的getter方法，模型负责计算cell高度
