@@ -24,8 +24,6 @@
         //在这里构建View
         self.contentView.backgroundColor = kColorWhite;
         self.selectionStyle=UITableViewCellSelectionStyleNone;
-        
-        NSLog(@"Init cell");
     }
     return self;
 }
@@ -33,11 +31,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    NSLog(@"In layoutSubviews");
-    if (self.message == nil) {
-        NSLog(@"message is nil");
-    }
-    else {
+    if (self.message) {
         CGFloat cellHeight = self.message.cellHeight;
         UIView *subContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDBScreenWidth, MsgCellBtnHeight+cellHeight+10)];
         subContentView.backgroundColor = kColorLightGray1;

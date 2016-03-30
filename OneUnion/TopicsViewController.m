@@ -34,9 +34,9 @@
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:nil action:nil];
     [self.navigationItem setBackBarButtonItem:backButton];
     //添加右侧按钮
-    UIImage *loadImage=[UIImage imageNamed:@"settings.png"];
+    UIImage *settingImage=[UIImage imageNamed:@"settings.png"];
     UIButton *settingBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
-    [settingBtn setImage:loadImage forState:UIControlStateNormal];
+    [settingBtn setImage:settingImage forState:UIControlStateNormal];
     UIBarButtonItem *settingBtnItem = [[UIBarButtonItem alloc]initWithCustomView:settingBtn];
     self.navigationItem.rightBarButtonItem = settingBtnItem;
     [settingBtn addTarget:self action:@selector(settingBtnClicked) forControlEvents:UIControlEventPrimaryActionTriggered];
@@ -74,7 +74,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     FloorsViewController *floorsViewController = [[FloorsViewController alloc]init];
+    //这里应该带着model
     [self.navigationController pushViewController:floorsViewController animated:YES];
+    NSLog(@"进入具体楼页面");
 }
 
 #pragma mark - TopicTableViewCellDelegate

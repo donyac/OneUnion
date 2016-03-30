@@ -12,6 +12,9 @@
 		2A42CF251CA6BFD50054EF6E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A42CF241CA6BFD50054EF6E /* MainViewController.m */; };
 		2A42CF271CA6C20B0054EF6E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A42CF261CA6C20B0054EF6E /* Default-568h@2x.png */; };
 		2A42CF341CA6CD100054EF6E /* TopicsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A42CF331CA6CD100054EF6E /* TopicsViewController.m */; };
+		2A7EC3A81CAA423B0003C063 /* write.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7EC3A71CAA423B0003C063 /* write.png */; };
+		2A7EC3AB1CAA43080003C063 /* WriteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A7EC3AA1CAA43080003C063 /* WriteViewController.m */; };
+		2A7EC3AD1CAA44AB0003C063 /* send.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7EC3AC1CAA44AB0003C063 /* send.png */; };
 		2A88E95E1CA5368C0041018E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A88E95D1CA5368C0041018E /* main.m */; };
 		2A88E9611CA5368C0041018E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A88E9601CA5368C0041018E /* AppDelegate.m */; };
 		2A88E9691CA5368C0041018E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A88E9681CA5368C0041018E /* Assets.xcassets */; };
@@ -40,6 +43,11 @@
 		2A42CF261CA6C20B0054EF6E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2A42CF321CA6CD100054EF6E /* TopicsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicsViewController.h; sourceTree = "<group>"; };
 		2A42CF331CA6CD100054EF6E /* TopicsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicsViewController.m; sourceTree = "<group>"; };
+		2A7E631E1CAB6AA500665AB1 /* CommonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDefine.h; sourceTree = "<group>"; };
+		2A7EC3A71CAA423B0003C063 /* write.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = write.png; sourceTree = "<group>"; };
+		2A7EC3A91CAA43080003C063 /* WriteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WriteViewController.h; sourceTree = "<group>"; };
+		2A7EC3AA1CAA43080003C063 /* WriteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WriteViewController.m; sourceTree = "<group>"; };
+		2A7EC3AC1CAA44AB0003C063 /* send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = send.png; sourceTree = "<group>"; };
 		2A88E9591CA5368C0041018E /* OneUnion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneUnion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A88E95D1CA5368C0041018E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2A88E95F1CA5368C0041018E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -99,6 +107,7 @@
 				2A050C791CA7ADA300D95666 /* UIColor-Expanded.h */,
 				2A050C7A1CA7ADA300D95666 /* UIColor-Expanded.m */,
 				2A050C781CA7A82F00D95666 /* UIConfig.h */,
+				2A7E631E1CAB6AA500665AB1 /* CommonDefine.h */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -116,6 +125,8 @@
 				2A9331FE1CA92CED008CAF98 /* UserInfoViewController.m */,
 				2A9332071CA9373E008CAF98 /* FloorsViewController.h */,
 				2A9332081CA9373E008CAF98 /* FloorsViewController.m */,
+				2A7EC3A91CAA43080003C063 /* WriteViewController.h */,
+				2A7EC3AA1CAA43080003C063 /* WriteViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -176,7 +187,9 @@
 				2A9331F11CA919B3008CAF98 /* me.png */,
 				2A9331F31CA919E9008CAF98 /* logout.png */,
 				2A9331EC1CA9157B008CAF98 /* settings.png */,
+				2A7EC3A71CAA423B0003C063 /* write.png */,
 				2A9332111CA9665D008CAF98 /* head.png */,
+				2A7EC3AC1CAA44AB0003C063 /* send.png */,
 				2A9331F51CA91A3E008CAF98 /* inner.png */,
 			);
 			name = Resources;
@@ -251,11 +264,13 @@
 			files = (
 				2A9331ED1CA9157B008CAF98 /* settings.png in Resources */,
 				2A88E9691CA5368C0041018E /* Assets.xcassets in Resources */,
+				2A7EC3AD1CAA44AB0003C063 /* send.png in Resources */,
 				2A9331F61CA91A3E008CAF98 /* inner.png in Resources */,
 				2A9331F41CA919E9008CAF98 /* logout.png in Resources */,
 				2A9332121CA9665D008CAF98 /* head.png in Resources */,
 				2A42CF271CA6C20B0054EF6E /* Default-568h@2x.png in Resources */,
 				2A9331F21CA919B3008CAF98 /* me.png in Resources */,
+				2A7EC3A81CAA423B0003C063 /* write.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +293,7 @@
 				2A42CF341CA6CD100054EF6E /* TopicsViewController.m in Sources */,
 				2A050C751CA79F7300D95666 /* TopicTableViewCell.m in Sources */,
 				2A9332101CA96281008CAF98 /* Message.m in Sources */,
+				2A7EC3AB1CAA43080003C063 /* WriteViewController.m in Sources */,
 				2A9331FF1CA92CED008CAF98 /* UserInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,7 @@
 
 #import "FloorsViewController.h"
 #import "MsgTableViewCell.h"
+#import "WriteViewController.h"
 #import "UIConfig.h"
 
 @implementation FloorsViewController
@@ -26,6 +27,14 @@
     topicLabel.numberOfLines = 2;
     topicLabel.lineBreakMode = NSLineBreakByCharWrapping;
     [self.tableView setTableHeaderView:topicLabel];
+    
+    //添加右侧写贴按钮
+    UIImage *writeImage=[UIImage imageNamed:@"write.png"];
+    UIButton *writeBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 44, 44)];
+    [writeBtn setImage:writeImage forState:UIControlStateNormal];
+    UIBarButtonItem *writeBtnItem = [[UIBarButtonItem alloc]initWithCustomView:writeBtn];
+    self.navigationItem.rightBarButtonItem = writeBtnItem;
+    [writeBtn addTarget:self action:@selector(writeBtnClicked) forControlEvents:UIControlEventPrimaryActionTriggered];
     //消除掉默认的分割线
     self.tableView.tableFooterView = [UIView new];
 }
@@ -54,5 +63,13 @@
     //Message *message = self.dataList[indexPath.row];
     Message *message = [[Message alloc]init];
     return message.cellHeight + MsgCellBtnHeight + 25;
+}
+
+#pragma mark - setting
+- (void)writeBtnClicked {
+    NSLog(@"进入发帖界面");
+    WriteViewController *writeViewController = [[WriteViewController alloc]init];
+    writeViewController.navigationItem.title = @"发表新帖";
+    [self.navigationController pushViewController:writeViewController animated:YES];
 }
 @end
