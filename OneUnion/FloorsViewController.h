@@ -10,6 +10,6 @@
 
 @interface FloorsViewController : UITableViewController
 
--(instancetype) initWithTopicID:(NSInteger) topicID;
+-(instancetype) initWithTopicID:(NSInteger) topicID andTopicName:(NSString*) topicName;
 - (void)setTopicName:(NSString*) topicName;
 @end

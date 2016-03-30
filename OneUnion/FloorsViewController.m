@@ -21,19 +21,17 @@
 
 @implementation FloorsViewController
 
--(instancetype) initWithTopicID:(NSInteger) topicID {
+-(instancetype) initWithTopicID:(NSInteger) topicID andTopicName:(NSString*) topicName{
     self = [super init];
     if (self) {
         //初始化模型，获取某个主题的所有帖子
         self.topicID = topicID;
+        self.topicName = topicName;
         self.floorList = [OneDb AllFloors:topicID];
     }
     return self;
 }
 
-- (void)setTopicName:(NSString*) topicName {
-    self.topicName = [topicName copy];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,6 +55,8 @@
     UIBarButtonItem *writeBtnItem = [[UIBarButtonItem alloc]initWithCustomView:writeBtn];
     self.navigationItem.rightBarButtonItem = writeBtnItem;
     [writeBtn addTarget:self action:@selector(writeBtnClicked) forControlEvents:UIControlEventPrimaryActionTriggered];
+    
+    
     //消除掉默认的分割线
     self.tableView.tableFooterView = [UIView new];
 }
@@ -92,7 +92,9 @@
 - (void)writeBtnClicked {
     NSLog(@"进入发帖界面");
     WriteViewController *writeViewController = [[WriteViewController alloc]init];
-    writeViewController.navigationItem.title = @"发表新帖";
+    writeViewController.topicID = self.topicID;
+    writeViewController.topicStr = self.topicName;
+    writeViewController.navigationItem.title = @"发表回复";
     [self.navigationController pushViewController:writeViewController animated:YES];
 }
 @end

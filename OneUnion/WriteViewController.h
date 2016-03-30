@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface WriteViewController : UIViewController
-//@property (nonatomic, copy)
+@property (nonatomic, assign) NSInteger topicID;
+@property (nonatomic, strong) NSString* topicStr;
+
 @end

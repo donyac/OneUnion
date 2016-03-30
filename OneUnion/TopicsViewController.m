@@ -97,7 +97,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger topicID = self.topicList[indexPath.row].topicID;
-    FloorsViewController *floorsViewController = [[FloorsViewController alloc]initWithTopicID:topicID];
+    NSString* topicName = self.topicList[indexPath.row].topicString;
+    FloorsViewController *floorsViewController = [[FloorsViewController alloc]initWithTopicID:topicID
+                                                                                 andTopicName:topicName];
     [floorsViewController setTopicName:self.topicList[indexPath.row].topicString];
     
     [self.navigationController pushViewController:floorsViewController animated:YES];
