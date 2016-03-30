@@ -9,8 +9,23 @@
 #import "BoardViewController.h"
 #import "BoardTableViewCell.h"
 #import "WriteViewController.h"
+#import "OneDb.h"
+#import "Topic.h"
+
+@interface BoardViewController ()
+@property (nonatomic, strong) NSArray<Topic *> *topicList;
+@end
 
 @implementation BoardViewController
+
+- (instancetype)initWithBoard:(NSInteger) boardID {
+    self = [super init];
+    if (self) {
+        //初始化模型，获取某一版区列表的最新文章
+        self.topicList = [OneDb RecentTopics:boardID];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,13 +51,22 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return self.topicList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BoardTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BoardTableViewCell"
                                                                forIndexPath:indexPath];
-    //告诉cell各个子view的高度
+    if (cell) {
+        cell.topicLabel.text = self.topicList[indexPath.row].topicString;
+        cell.floorHostLabel.text = self.topicList[indexPath.row].authorName;
+        
+        NSDateFormatter* fmt = [[NSDateFormatter alloc] init];
+        fmt.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+        fmt.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+        NSString* dateString = [fmt stringFromDate:self.topicList[indexPath.row].timeStamp];
+        cell.timeLabel.text = dateString;
+    }
     return cell;
 }
 

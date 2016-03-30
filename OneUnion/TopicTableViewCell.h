@@ -11,7 +11,7 @@
 @protocol TopicTableViewCellDelegate <NSObject>
 @optional
 // 状态改变
-- (void)boardButtonClicked:(NSString *)btnTitle;
+- (void)boardButtonClicked:(NSString *)boardName andID:(NSInteger) boardID;
 - (void)personInformationClicked:(NSString *)personName;
 @end
 
@@ -20,6 +20,7 @@
 @property (nonatomic, strong) UILabel *topicLabel;
 @property (nonatomic, strong) UIButton *boardBtn;
 @property (nonatomic, strong) UIButton *floorHostBtn;
+@property (nonatomic,  assign) NSInteger boardID;
 
 @property (nonatomic, weak) id<TopicTableViewCellDelegate> delegate;
 @end

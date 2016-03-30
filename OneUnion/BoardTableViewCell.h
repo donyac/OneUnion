@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface BoardTableViewCell : UITableViewCell
-
+@property (nonatomic, strong) UILabel *topicLabel;
+@property (nonatomic, strong) UILabel *floorHostLabel;
+//@property (nonatomic, strong) UILabel *pagesLabel;
+@property (nonatomic, strong) UILabel *timeLabel;
 @end

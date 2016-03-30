@@ -10,4 +10,5 @@
 
 @interface BoardViewController : UITableViewController
 
+- (instancetype)initWithBoard:(NSInteger) boardID;
 @end

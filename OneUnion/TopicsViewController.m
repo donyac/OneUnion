@@ -17,7 +17,6 @@
 
 
 @interface TopicsViewController () <TopicTableViewCellDelegate>
-
 @property (nonatomic, strong) NSArray<Topic *> *topicList;
 @end
 
@@ -26,7 +25,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        //初始化模型
+        //初始化模型，获取首页
         self.topicList = [OneDb RecentTopics];
     }
     return self;
@@ -80,8 +79,11 @@
     //根据index书写model
     if (cell) {
         cell.topicLabel.text = self.topicList[indexPath.row].topicString;
-        cell.floorHostBtn.titleLabel.text = self.topicList[indexPath.row].authorName;
-        cell.boardBtn.titleLabel.text = self.topicList[indexPath.row].boardName;
+        [cell.floorHostBtn setTitle:self.topicList[indexPath.row].authorName
+                           forState:UIControlStateNormal];
+        [cell.boardBtn setTitle:self.topicList[indexPath.row].boardName
+                       forState:UIControlStateNormal];
+        cell.boardID = self.topicList[indexPath.row].boardID;//赋给boardName的同时，必须赋对应的boardID
     }
     cell.delegate = self;
     return cell;
@@ -102,14 +104,15 @@
 }
 
 #pragma mark - TopicTableViewCellDelegate
-- (void)boardButtonClicked:(NSString *)btnTitle {
-    if (nil == btnTitle) {
+- (void)boardButtonClicked:(NSString *)boardName andID:(NSInteger) boardID {
+    
+    if (nil == boardName) {
         return;
     }
     
     NSLog(@"进入版区界面");
-    BoardViewController *boardViewController = [[BoardViewController alloc]init];
-    boardViewController.navigationItem.title = btnTitle;
+    BoardViewController *boardViewController = [[BoardViewController alloc]initWithBoard:boardID];
+    boardViewController.navigationItem.title = boardName;
     [self.navigationController pushViewController:boardViewController animated:YES];
 }
 

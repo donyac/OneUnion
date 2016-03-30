@@ -13,4 +13,5 @@
 
 + (void)InitAvos;
 + (NSArray<Topic *> *)RecentTopics;
++ (NSArray<Topic *> *)RecentTopics:(NSInteger) boardID;
 @end

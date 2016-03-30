@@ -9,13 +9,6 @@
 #import "BoardTableViewCell.h"
 #import "UIConfig.h"
 
-@interface BoardTableViewCell ()
-@property (nonatomic, strong) UILabel *topicLabel;
-@property (nonatomic, strong) UILabel *floorHostLabel;
-@property (nonatomic, strong) UILabel *pagesLabel;
-@property (nonatomic, strong) UILabel *timeLabel;
-@end
-
 @implementation BoardTableViewCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -47,11 +40,11 @@
         [subContentView addSubview:self.floorHostLabel];
 
         //页数
-        self.pagesLabel = [[UILabel alloc] initWithFrame:CGRectMake(115.0f, Y, 79.0f, 17.0f)];
-        self.pagesLabel.font = kFontSizeSmall;
-        self.pagesLabel.textColor = kColorLightGray;
-        self.pagesLabel.text = @"123/9230";
-        [subContentView addSubview:self.pagesLabel];
+//        self.pagesLabel = [[UILabel alloc] initWithFrame:CGRectMake(115.0f, Y, 79.0f, 17.0f)];
+//        self.pagesLabel.font = kFontSizeSmall;
+//        self.pagesLabel.textColor = kColorLightGray;
+//        self.pagesLabel.text = @"123/9230";
+//        [subContentView addSubview:self.pagesLabel];
         
         //时间
         self.timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(180.0f, Y, 160.0f, 17.0f)];

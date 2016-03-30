@@ -11,20 +11,6 @@
 
 @implementation OneDb
 
-//暂时用不到单例，只用类方法已经满足需求
-//+(OneDb *)sharedInstance
-//{
-//    static OneDb *sharedManager;
-//    
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        sharedManager = [[OneDb alloc] init];
-//
-//    });
-//    
-//    return sharedManager;
-//}
-
 /**
  *  使数据库加载，必须首先被调用
  */
@@ -35,9 +21,6 @@
 }
 
 + (NSArray<Topic *> *)RecentTopics {
-    //创建空数组
-    NSMutableArray<Topic *> *topicList = [NSMutableArray array];
-    
     AVQuery *queryTopic = [AVQuery queryWithClassName:@"TopicModel"];
     // 按时间，降序排列
     [queryTopic orderByDescending:@"createdAt"];
@@ -46,6 +29,29 @@
     
     NSLog(@"topics num = %ld",recentTopics.count);
     
+    return [OneDb ConvertTopicsFromAvObjects:recentTopics];
+}
+
++ (NSArray<Topic *> *)RecentTopics:(NSInteger) boardID {
+    AVQuery *queryTopic = [AVQuery queryWithClassName:@"TopicModel"];
+    [queryTopic whereKey:@"boardID" equalTo:@(boardID)];
+    // 按时间，降序排列
+    [queryTopic orderByDescending:@"createdAt"];
+    queryTopic.limit = 10;//只返回最多10个结果
+    NSArray<AVObject *> *recentTopics = [queryTopic findObjects];
+    
+    NSLog(@"topics num = %ld",recentTopics.count);
+    
+    return [OneDb ConvertTopicsFromAvObjects:recentTopics];
+}
+
+/**
+ *  填充topicList
+ */
++ (NSArray<Topic *> *) ConvertTopicsFromAvObjects:(NSArray<AVObject *> *)recentTopics {
+    //创建空数组
+    NSMutableArray<Topic *> *topicList = [NSMutableArray array];
+    
     for (AVObject *avTopic in recentTopics) {
         
         Topic *_topic = [Topic new];
@@ -53,6 +59,7 @@
         _topic.topicString = [avTopic objectForKey:@"topicString"];
         _topic.authorID = [[avTopic objectForKey:@"authorID"] integerValue];
         _topic.boardID = [[avTopic objectForKey:@"boardID"] integerValue];
+        _topic.timeStamp = avTopic.updatedAt;
         
         //取得用户名字符串
         AVQuery *query = [AVQuery queryWithClassName:@"UserTable"];
