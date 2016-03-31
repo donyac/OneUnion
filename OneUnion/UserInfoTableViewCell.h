@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UserInfoTableViewCell : UITableViewCell
-
+@property (nonatomic, strong) UILabel *keyLabel;
+@property (nonatomic, strong) UITextField *valueTextField;
 @end

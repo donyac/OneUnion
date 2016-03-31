@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface User : NSObject
+@interface User : NSObject <NSCoding>
 @property (nonatomic, assign) NSInteger userID;
 @property (nonatomic, strong) NSString* userName;
+
++(User *)sharedInstance;
 @end

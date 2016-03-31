@@ -9,11 +9,6 @@
 #import "UserInfoTableViewCell.h"
 #import "UIConfig.h"
 
-@interface UserInfoTableViewCell ()
-@property (nonatomic, strong) UILabel *keyLabel;
-@property (nonatomic, strong) UILabel *valueLabel;
-@end
-
 @implementation UserInfoTableViewCell
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -32,11 +27,10 @@
         self.keyLabel.text = @"参数名称";
         [subContentView addSubview:self.keyLabel];
         //参数值
-        self.valueLabel = [[UILabel alloc] initWithFrame:CGRectMake(100.0f, 2.0f, 180.0f, 17.0f)];
-        self.valueLabel.font = kFontSizeSmall;
-        self.valueLabel.textColor = kColorDeepGray;
-        self.valueLabel.text = @"参数值123456789啊啊啊啊啊";
-        [subContentView addSubview:self.valueLabel];
+        self.valueTextField = [[UITextField alloc] initWithFrame:CGRectMake(100.0f, 2.0f, 180.0f, 17.0f)];
+        self.valueTextField.font = kFontSizeSmall;
+        self.valueTextField.text = @"请输入值";
+        [subContentView addSubview:self.valueTextField];
     }
     return self;
 }

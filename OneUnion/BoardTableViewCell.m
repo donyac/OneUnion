@@ -28,7 +28,7 @@
         self.topicLabel.numberOfLines = 2;
         self.topicLabel.lineBreakMode = NSLineBreakByCharWrapping;
         self.topicLabel.textColor = kColorDeepGray;
-        self.topicLabel.text = @"我是标题dwwddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd";
+        self.topicLabel.text = @"我是标题";
         [subContentView addSubview:self.topicLabel];
         
         const CGFloat Y = 45.0f;
@@ -36,7 +36,7 @@
         self.floorHostLabel = [[UILabel alloc] initWithFrame:CGRectMake(18.0f, Y, 85.0f, 17.0f)];
         self.floorHostLabel.font = kFontSizeSmall;
         self.floorHostLabel.textColor = kColorLightGray;
-        self.floorHostLabel.text = @"我是楼主dwwddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd";
+        self.floorHostLabel.text = @"楼主名字";
         [subContentView addSubview:self.floorHostLabel];
 
         //页数

@@ -34,12 +34,21 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 7;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UserInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserInfoTableViewCell"
                                                                forIndexPath:indexPath];
+    switch (indexPath.row) {
+        case 0:
+            cell.keyLabel.text = @"用户名";
+            break;
+        case 1:
+            cell.keyLabel.text = @"用户权限等级";
+        default:
+            break;
+    }
     
     return cell;
 }
