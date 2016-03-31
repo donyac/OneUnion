@@ -9,36 +9,30 @@
 #import "WriteView.h"
 #import "UIConfig.h"
 
-
-@interface WriteView()
-@property (nonatomic, strong) NSString *topicStr;
-@property (nonatomic, assign) NSInteger topicID;
-@end
-
 @implementation WriteView
 
 - (instancetype)initWithTopicStr:(NSString*) topicStr andTopicID:(NSInteger) topicID{
     self = [super init];
     if (self) {
-        self.topicStr = topicStr;
         self.topicID = topicID;
         
-        if (self.topicStr) {
-            UILabel *topicLabel = [[UILabel alloc]initWithFrame:CGRectMake(5,70, kDBScreenWidth-10, 20)];
-            topicLabel.text = topicStr;
-            topicLabel.backgroundColor =kColorWhite;
-            [self addSubview:topicLabel];
+        if (topicStr) {
+            self.topicLabel = [[UILabel alloc]initWithFrame:CGRectMake(5,70, kDBScreenWidth-10, 20)];
+            self.topicLabel.text = topicStr;
+            self.topicLabel.backgroundColor =kColorWhite;
+            [self addSubview:self.topicLabel];
             
         } else {
-            UITextField *topicTextField = [[UITextField alloc]initWithFrame:CGRectMake(5,70, kDBScreenWidth-10, 20)];
-            topicTextField.backgroundColor = kColorLightGray1;
-            [self addSubview:topicTextField];
+            self.topicTextField = [[UITextField alloc]initWithFrame:CGRectMake(5,70, kDBScreenWidth-10, 20)];
+            self.topicTextField.backgroundColor = kColorLightGray1;
+            [self addSubview:self.topicTextField];
         }
-        UITextField *contentTextFidld = [[UITextField alloc]initWithFrame:CGRectMake(10,100,kDBScreenWidth-20,kDBScreenHeight/2)];
-        contentTextFidld.borderStyle = UITextBorderStyleRoundedRect;
-        contentTextFidld.returnKeyType = UIReturnKeyDone;
-        contentTextFidld.backgroundColor = kColorLightGray;
-        [self addSubview:contentTextFidld];
+        self.contentTextFidld = [[UITextField alloc]initWithFrame:CGRectMake(10,100,kDBScreenWidth-20,kDBScreenHeight/2)];
+        self.contentTextFidld.borderStyle = UITextBorderStyleRoundedRect;
+        self.contentTextFidld.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
+        self.contentTextFidld.returnKeyType = UIReturnKeyDone;
+        self.contentTextFidld.backgroundColor = kColorLightGray;
+        [self addSubview:self.contentTextFidld];
     }
     return self;
 }

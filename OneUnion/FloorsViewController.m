@@ -32,6 +32,9 @@
     return self;
 }
 
+- (void)setupWithTopicID:(NSInteger) topicID andTopicName:(NSString*) topicName{
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -94,6 +97,7 @@
     WriteViewController *writeViewController = [[WriteViewController alloc]init];
     writeViewController.topicID = self.topicID;
     writeViewController.topicStr = self.topicName;
+    //writeViewController.boardName = self.;
     writeViewController.navigationItem.title = @"发表回复";
     [self.navigationController pushViewController:writeViewController animated:YES];
 }

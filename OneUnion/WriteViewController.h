@@ -11,5 +11,5 @@
 @interface WriteViewController : UIViewController
 @property (nonatomic, assign) NSInteger topicID;
 @property (nonatomic, strong) NSString* topicStr;
-
+@property (nonatomic, strong) NSString* boardName;
 @end

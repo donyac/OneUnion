@@ -82,6 +82,8 @@
 - (void)writeBtnClicked {
     NSLog(@"进入发帖界面");
     WriteViewController *writeViewController = [[WriteViewController alloc]init];
+    writeViewController.topicID = 0;
+    writeViewController.topicStr = nil;
     writeViewController.navigationItem.title = @"发表新帖";
     [self.navigationController pushViewController:writeViewController animated:YES];
 }

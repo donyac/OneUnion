@@ -115,4 +115,20 @@
     
     return floorList;
 }
+
+/**
+ *  发表新帖
+ */
++ (void) SendFloorWithTopicID:(NSInteger) topicID
+                 andTopicName:(NSString *) topicName
+                   andContent:(NSString*) content {
+    if (topicID > 0) {//有效id，数据库中应该已经存在
+        AVObject *avFloor = [[AVObject alloc] initWithClassName:@"FloorTable"];// 构建对象
+        [avFloor setObject:@(topicID) forKey:@"topicID"];// 设置名称
+        [avFloor setObject:@1 forKey:@"authorID"];// 设置优先级
+        [avFloor saveInBackground];// 保存到服务端
+    } else {//无效id，数据库中要予以新创建
+        //
+    }
+}
 @end

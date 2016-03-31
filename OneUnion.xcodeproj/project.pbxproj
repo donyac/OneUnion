@@ -33,6 +33,7 @@
 		2A9332091CA9373E008CAF98 /* FloorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A9332081CA9373E008CAF98 /* FloorsViewController.m */; };
 		2A93320C1CA95810008CAF98 /* MsgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A93320B1CA95810008CAF98 /* MsgTableViewCell.m */; };
 		2A9332121CA9665D008CAF98 /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A9332111CA9665D008CAF98 /* head.png */; };
+		2AC3D71F1CACFA570001DCBB /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AC3D71E1CACFA570001DCBB /* User.m */; };
 		313FB5185399C10FB354288C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0D4F7A4380806122E51245 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,8 @@
 		2A93320A1CA95810008CAF98 /* MsgTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgTableViewCell.h; sourceTree = "<group>"; };
 		2A93320B1CA95810008CAF98 /* MsgTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgTableViewCell.m; sourceTree = "<group>"; };
 		2A9332111CA9665D008CAF98 /* head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head.png; sourceTree = "<group>"; };
+		2AC3D71D1CACFA570001DCBB /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		2AC3D71E1CACFA570001DCBB /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		6B0D4F7A4380806122E51245 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F98A75D07CEBD57858183E90 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,6 +242,8 @@
 				2A1CCD981CABA58B008B89F9 /* Topic.m */,
 				2A6536F61CABDE3A00898D15 /* Floor.h */,
 				2A6536F71CABDE3A00898D15 /* Floor.m */,
+				2AC3D71D1CACFA570001DCBB /* User.h */,
+				2AC3D71E1CACFA570001DCBB /* User.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -381,6 +386,7 @@
 			files = (
 				2A93320C1CA95810008CAF98 /* MsgTableViewCell.m in Sources */,
 				2A1CCD991CABA58B008B89F9 /* Topic.m in Sources */,
+				2AC3D71F1CACFA570001DCBB /* User.m in Sources */,
 				2A72C2001CAC012A0032E4AC /* WriteView.m in Sources */,
 				2A9331E51CA8EF97008CAF98 /* BoardViewController.m in Sources */,
 				2A88E9611CA5368C0041018E /* AppDelegate.m in Sources */,

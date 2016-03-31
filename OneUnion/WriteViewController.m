@@ -9,6 +9,7 @@
 #import "WriteViewController.h"
 #import "WriteView.h"
 #import "UIConfig.h"
+#import "Floor.h"
 
 @implementation WriteViewController
 
@@ -35,6 +36,26 @@
 #pragma mark - send
 - (void)sendBtnClicked {
     NSLog(@"发送帖子");
-
+    
+    NSInteger topicID = self.topicID;
+    WriteView *writeView = (WriteView *)(self.view);
+    NSString *topicStr = nil;
+    if (topicID > 0) {
+        //已经有现成的topicStr了
+        topicStr = writeView.topicLabel.text;
+    } else {
+        //topicStr需要从用户的输入中获取
+        topicStr = writeView.topicTextField.text;
+    }
+    
+    NSString *content = writeView.contentTextFidld.text;
+    
+    //构建一个floor，用于发送楼层
+    Floor *floor = [[Floor alloc]init];
+    floor.floorID = -1;//给一个非法id，
+    floor.topicID = topicID;
+    floor.content = writeView.contentTextFidld.text;
+    floor.authorID = 1;//先写死
+    floor.boardName = self.boardName;
 }
 @end

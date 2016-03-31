@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface WriteView : UIView
+@property (nonatomic, assign) NSInteger topicID;
+
+@property (nonatomic, strong) UILabel *topicLabel;
+@property (nonatomic, strong) UITextField *topicTextField;
+@property (nonatomic, strong) UITextField *contentTextFidld;
 
 - (instancetype)initWithTopicStr:(NSString*) topicStr andTopicID:(NSInteger) topicID;
 @end
