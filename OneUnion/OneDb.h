@@ -16,4 +16,6 @@
 + (NSArray<Topic *> *)RecentTopics;
 + (NSArray<Topic *> *)RecentTopics:(NSString *) boardName;
 + (NSArray<Floor *> *)AllFloors:(NSInteger) topicID;
++ (void) SendWithFloor:(Floor *) floor
+              andTopic:(Topic *) topic;
 @end

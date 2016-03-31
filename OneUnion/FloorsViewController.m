@@ -9,31 +9,21 @@
 #import "FloorsViewController.h"
 #import "MsgTableViewCell.h"
 #import "WriteViewController.h"
-#import "Floor.h"
+
 #import "OneDb.h"
 #import "UIConfig.h"
 
 @interface FloorsViewController ()
-@property (nonatomic, assign) NSInteger topicID;
-@property (nonatomic, strong) NSString *topicName;
+
 @property (nonatomic, strong) NSArray<Floor *> *floorList;
+@property (nonatomic, strong) Topic *topic;
 @end
 
 @implementation FloorsViewController
 
--(instancetype) initWithTopicID:(NSInteger) topicID andTopicName:(NSString*) topicName{
-    self = [super init];
-    if (self) {
-        //初始化模型，获取某个主题的所有帖子
-        self.topicID = topicID;
-        self.topicName = topicName;
-        self.floorList = [OneDb AllFloors:topicID];
-    }
-    return self;
-}
-
-- (void)setupWithTopicID:(NSInteger) topicID andTopicName:(NSString*) topicName{
-    
+- (void)setupWithTopic:(Topic*) topic{
+    self.topic = topic;
+    self.floorList = [OneDb AllFloors:topic.topicID];
 }
 
 - (void)viewDidLoad {
@@ -45,7 +35,7 @@
     
     //添加一个头
     UILabel *topicLabel = [[UILabel alloc]initWithFrame:CGRectMake(0,0, kDBScreenWidth, 20.0f)];
-    topicLabel.text = self.topicName;
+    topicLabel.text = self.topic.topicString;
     topicLabel.font = [UIFont boldSystemFontOfSize:16];
     topicLabel.numberOfLines = 2;
     topicLabel.lineBreakMode = NSLineBreakByCharWrapping;
@@ -62,6 +52,11 @@
     
     //消除掉默认的分割线
     self.tableView.tableFooterView = [UIView new];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    //用刷新model
+    self.floorList = [OneDb AllFloors:self.topic.topicID];
 }
 
 #pragma mark - Table view data source <UITableViewDataSource>
@@ -95,9 +90,7 @@
 - (void)writeBtnClicked {
     NSLog(@"进入发帖界面");
     WriteViewController *writeViewController = [[WriteViewController alloc]init];
-    writeViewController.topicID = self.topicID;
-    writeViewController.topicStr = self.topicName;
-    //writeViewController.boardName = self.;
+    [writeViewController setupWithTopic:self.topic];
     writeViewController.navigationItem.title = @"发表回复";
     [self.navigationController pushViewController:writeViewController animated:YES];
 }

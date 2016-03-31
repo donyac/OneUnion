@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Topic.h"
 
 @interface WriteViewController : UIViewController
-@property (nonatomic, assign) NSInteger topicID;
-@property (nonatomic, strong) NSString* topicStr;
-@property (nonatomic, strong) NSString* boardName;
+@property (nonatomic, strong) Topic* topic;
+
+- (void)setupWithTopic:(Topic*) topic;
 @end

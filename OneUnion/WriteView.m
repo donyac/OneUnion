@@ -9,24 +9,26 @@
 #import "WriteView.h"
 #import "UIConfig.h"
 
+
 @implementation WriteView
 
-- (instancetype)initWithTopicStr:(NSString*) topicStr andTopicID:(NSInteger) topicID{
+- (instancetype)initWithTopic:(Topic *) topic{
     self = [super init];
     if (self) {
-        self.topicID = topicID;
+        self.topic = topic;
         
-        if (topicStr) {
-            self.topicLabel = [[UILabel alloc]initWithFrame:CGRectMake(5,70, kDBScreenWidth-10, 20)];
-            self.topicLabel.text = topicStr;
-            self.topicLabel.backgroundColor =kColorWhite;
-            [self addSubview:self.topicLabel];
-            
-        } else {
+        if (topic.topicID == 0) {//如果id==0，说明是发表新主题，需要画上主题文本输入框
             self.topicTextField = [[UITextField alloc]initWithFrame:CGRectMake(5,70, kDBScreenWidth-10, 20)];
             self.topicTextField.backgroundColor = kColorLightGray1;
             [self addSubview:self.topicTextField];
         }
+        else {
+            self.topicLabel = [[UILabel alloc]initWithFrame:CGRectMake(5,70, kDBScreenWidth-10, 20)];
+            self.topicLabel.backgroundColor = kColorWhite;
+            self.topicLabel.text = topic.topicString;
+            [self addSubview:self.topicLabel];
+        }
+        
         self.contentTextFidld = [[UITextField alloc]initWithFrame:CGRectMake(10,100,kDBScreenWidth-20,kDBScreenHeight/2)];
         self.contentTextFidld.borderStyle = UITextBorderStyleRoundedRect;
         self.contentTextFidld.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;

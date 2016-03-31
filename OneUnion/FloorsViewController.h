@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Topic.h"
+#import "Floor.h"
 
 @interface FloorsViewController : UITableViewController
-
--(instancetype) initWithTopicID:(NSInteger) topicID andTopicName:(NSString*) topicName;
-- (void)setTopicName:(NSString*) topicName;
+- (void)setupWithTopic:(Topic*) topic;
 @end

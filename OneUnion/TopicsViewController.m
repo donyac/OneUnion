@@ -96,14 +96,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger topicID = self.topicList[indexPath.row].topicID;
-    NSString* topicName = self.topicList[indexPath.row].topicString;
-    FloorsViewController *floorsViewController = [[FloorsViewController alloc]initWithTopicID:topicID
-                                                                                 andTopicName:topicName];
-    [floorsViewController setTopicName:self.topicList[indexPath.row].topicString];
+    
+    FloorsViewController *floorsViewController = [[FloorsViewController alloc]init];
+    [floorsViewController setupWithTopic:self.topicList[indexPath.row]];
     
     [self.navigationController pushViewController:floorsViewController animated:YES];
-    NSLog(@"进入具体楼页面");
+    NSLog(@"由TopicsView进入具体楼页面");
 }
 
 #pragma mark - TopicTableViewCellDelegate

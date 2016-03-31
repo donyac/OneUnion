@@ -119,16 +119,25 @@
 /**
  *  发表新帖
  */
-+ (void) SendFloorWithTopicID:(NSInteger) topicID
-                 andTopicName:(NSString *) topicName
-                   andContent:(NSString*) content {
-    if (topicID > 0) {//有效id，数据库中应该已经存在
-        AVObject *avFloor = [[AVObject alloc] initWithClassName:@"FloorTable"];// 构建对象
-        [avFloor setObject:@(topicID) forKey:@"topicID"];// 设置名称
-        [avFloor setObject:@1 forKey:@"authorID"];// 设置优先级
-        [avFloor saveInBackground];// 保存到服务端
-    } else {//无效id，数据库中要予以新创建
-        //
++ (void) SendWithFloor:(Floor *) floor
+              andTopic:(Topic *) topic {
+
+    NSInteger topicID = topic.topicID;
+    if (!topic.topicString) {//有必要创建topic，从而获取topicID
+        AVObject *avTopic = [[AVObject alloc] initWithClassName:@"TopicModel"];// 构建对象
+        [avTopic setObject:@(topic.authorID) forKey:@"authorID"];
+        [avTopic setObject:topic.topicString forKey:@"topicString"];
+        [avTopic setObject:topic.boardName forKey:@"boardName"];
+        [avTopic saveEventually];// 保存到服务端
+        topicID = [[avTopic objectForKey:@"topicID"] integerValue];//更新从数据库获取的topicID
     }
+    
+    floor.topicID = topicID;
+    AVObject *avFloor = [[AVObject alloc] initWithClassName:@"FloorTable"];// 构建对象
+    [avFloor setObject:@(floor.topicID) forKey:@"topicID"];
+    [avFloor setObject:@(floor.authorID) forKey:@"authorID"];
+    [avFloor setObject:floor.boardName forKey:@"boardName"];
+    [avFloor setObject:floor.content forKey:@"content"];
+    [avFloor saveEventually];// 保存到服务端
 }
 @end

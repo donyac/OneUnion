@@ -9,11 +9,13 @@
 #import "BoardViewController.h"
 #import "BoardTableViewCell.h"
 #import "WriteViewController.h"
+#import "FloorsViewController.h"
 #import "OneDb.h"
 #import "Topic.h"
 
 @interface BoardViewController ()
 @property (nonatomic, strong) NSArray<Topic *> *topicList;
+@property (nonatomic, copy) NSString* boardName;
 @end
 
 @implementation BoardViewController
@@ -78,12 +80,22 @@
     return 75.0f;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    FloorsViewController *floorsViewController = [[FloorsViewController alloc]init];
+    [floorsViewController setupWithTopic:self.topicList[indexPath.row]];
+    
+    [self.navigationController pushViewController:floorsViewController animated:YES];
+    NSLog(@"由BoardsView进入具体楼页面");
+}
+
 #pragma mark - setting
 - (void)writeBtnClicked {
     NSLog(@"进入发帖界面");
     WriteViewController *writeViewController = [[WriteViewController alloc]init];
-    writeViewController.topicID = 0;
-    writeViewController.topicStr = nil;
+    Topic* topic = [Topic new];
+    topic.boardName = self.boardName;
+    [writeViewController setupWithTopic:topic];
     writeViewController.navigationItem.title = @"发表新帖";
     [self.navigationController pushViewController:writeViewController animated:YES];
 }
