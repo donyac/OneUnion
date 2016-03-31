@@ -57,6 +57,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     //用刷新model
     self.floorList = [OneDb AllFloors:self.topic.topicID];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source <UITableViewDataSource>

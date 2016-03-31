@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface Floor : NSObject
-@property (nonatomic, assign) NSInteger floorID;
 @property (nonatomic, assign) NSInteger topicID;
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, assign) NSInteger authorID;

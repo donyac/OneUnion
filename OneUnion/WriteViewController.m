@@ -44,11 +44,15 @@
     
     WriteView *writeView = (WriteView *)(self.view);
     
+    if (writeView.topicTextField.text) {//标题文本输入框不为空
+        self.topic.topicString = writeView.topicTextField.text;
+    }
     //修改floor，用于发送新楼层
     Floor *floor = [Floor new];
     floor.boardName = self.topic.boardName;
     floor.content = writeView.contentTextFidld.text;
     floor.authorID = 1;//先写死
+    self.topic.authorID = 1;//先写死
     
     //向数据库发送floor和topic
     [OneDb SendWithFloor:floor andTopic:self.topic];

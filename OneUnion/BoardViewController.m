@@ -24,6 +24,7 @@
     self = [super init];
     if (self) {
         //初始化模型，获取某一版区列表的最新文章
+        self.boardName = boardName;
         self.topicList = [OneDb RecentTopics:boardName];
     }
     return self;
@@ -70,6 +71,12 @@
         cell.timeLabel.text = dateString;
     }
     return cell;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    //用刷新model
+    self.topicList = [OneDb RecentTopics:self.boardName];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table View Delegate <UITableViewDelegate>

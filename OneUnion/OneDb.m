@@ -95,7 +95,6 @@
     for (AVObject *avFloor in recentTopics) {
         
         Floor *_floor = [Floor new];
-        _floor.floorID = [[avFloor objectForKey:@"floorID"] integerValue];
         _floor.topicID = [[avFloor objectForKey:@"topicID"] integerValue];
         _floor.content = [avFloor objectForKey:@"content"];
         _floor.authorID = [[avFloor objectForKey:@"authorID"] integerValue];
@@ -123,12 +122,15 @@
               andTopic:(Topic *) topic {
 
     NSInteger topicID = topic.topicID;
-    if (!topic.topicString) {//有必要创建topic，从而获取topicID
+    if (topic.topicID == 0) {//有必要创建topic，从而获取topicID
         AVObject *avTopic = [[AVObject alloc] initWithClassName:@"TopicModel"];// 构建对象
         [avTopic setObject:@(topic.authorID) forKey:@"authorID"];
         [avTopic setObject:topic.topicString forKey:@"topicString"];
         [avTopic setObject:topic.boardName forKey:@"boardName"];
-        [avTopic saveEventually];// 保存到服务端
+        avTopic.fetchWhenSave = true;
+        [avTopic save];// 保存到服务端
+        NSLog(@"%@",avTopic.objectId);
+        //[avTopic fetch];//从服务器拉取数据更新
         topicID = [[avTopic objectForKey:@"topicID"] integerValue];//更新从数据库获取的topicID
     }
     
@@ -138,6 +140,6 @@
     [avFloor setObject:@(floor.authorID) forKey:@"authorID"];
     [avFloor setObject:floor.boardName forKey:@"boardName"];
     [avFloor setObject:floor.content forKey:@"content"];
-    [avFloor saveEventually];// 保存到服务端
+    [avFloor save];// 保存到服务端
 }
 @end

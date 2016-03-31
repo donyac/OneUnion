@@ -88,6 +88,12 @@
     return cell;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    //用刷新model
+    self.topicList = [OneDb RecentTopics];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table View Delegate <UITableViewDelegate>
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
